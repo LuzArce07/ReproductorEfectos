@@ -244,6 +244,13 @@ namespace Reproductor
 
         }
 
+        private void sldDelayOffset_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+            if(delay != null && output != null && output.PlaybackState != PlaybackState.Stopped)
+            {
+                delay
+            }
+        }
     }
     
 }
