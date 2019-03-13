@@ -243,14 +243,33 @@ namespace Reproductor
             }
 
         }
-
-        private void sldDelayOffset_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        
+        private void cbDelayActivo_Checked(object sender, RoutedEventArgs e)
         {
-            if(delay != null && output != null && output.PlaybackState != PlaybackState.Stopped)
+            
+            if(cbDelayActivo.IsChecked == true) {
+
+                sldDelayOffset.IsEnabled = true;
+                sldGanancia.IsEnabled = true;
+
+            } else {
+
+                sldDelayOffset.IsEnabled = false;
+                sldGanancia.IsEnabled = false;
+
+            }
+
+        }
+
+
+       private void sldDelayOffset_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+            if (delay != null && output != null && output.PlaybackState != PlaybackState.Stopped)
             {
-                delay
+
             }
         }
+
     }
-    
+
 }

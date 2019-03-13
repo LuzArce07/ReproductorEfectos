@@ -11,34 +11,8 @@ namespace Reproductor
 
     class Delay : ISampleProvider
     {
-        private float delay;
-        public float Delay
-        {
-            get
-            {
-                return Delay;
-            }
-            set
-            {
+        public bool Activo { get; set; }
 
-                if (value < 0)
-                {
-                    delay = 0;
-
-                }
-                else if (value > 1)
-                {
-                    delay = 1;
-
-                }
-                else
-                {
-                    delay = value;
-
-                }
-
-            }
-        }
         private ISampleProvider fuente;
         public int OffsetMilisegundos { get; set; }
         private int cantidadMuestrasOffset;
@@ -102,18 +76,23 @@ namespace Reproductor
             }
 
             //Aplicar el efecto
-            if (milisegundosTranscurridos > OffsetMilisegundos)
+            if (Activo == true)
             {
 
-                for(int i = 0; i < read; i++)
+                if (milisegundosTranscurridos > OffsetMilisegundos)
                 {
 
-                    buffer[offset + i] += bufferDelay[cantidadMuestrasTranscurridas - cantidadMuestrasBorradas + i - cantidadMuestrasOffset];
-                
+                    for (int i = 0; i < read; i++)
+                    {
+
+                        buffer[offset + i] += bufferDelay[cantidadMuestrasTranscurridas - cantidadMuestrasBorradas + i - cantidadMuestrasOffset];
+
+                    }
+
                 }
 
             }
-
+            
             cantidadMuestrasTranscurridas += read;
             return read;
 
