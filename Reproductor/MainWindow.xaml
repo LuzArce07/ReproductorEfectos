@@ -31,10 +31,10 @@
         <TextBlock HorizontalAlignment="Left" Margin="201,180,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="138" Height="18"><Run Text="Duración "/><Run Text="Fade "/><Run Text="Out"/><Run Text=" (seg):"/><LineBreak/><Run Text=""/></TextBlock>
         <TextBox x:Name="txtDuracionFadeOut" HorizontalAlignment="Left" Height="23" Margin="201,206,0,0" TextWrapping="Wrap" Text="1" VerticalAlignment="Top" Width="120"/>
         <Button x:Name="btnFadeOut" Content="Iniciar Fade Out" HorizontalAlignment="Left" Margin="351,187,0,0" VerticalAlignment="Top" Width="97" Height="27" Click="btnFadeOut_Click"/>
-        <CheckBox x:Name="cbDelayActivo" Content="Activo" HorizontalAlignment="Left" Margin="26,265,0,0" VerticalAlignment="Top" Checked="cbDelayActivo_Checked"/>
+        <CheckBox x:Name="cbDelayActivo" Click="cbDelayActivo_Click" Content="Activo" HorizontalAlignment="Left" Margin="26,265,0,0" VerticalAlignment="Top" />
         <TextBlock HorizontalAlignment="Left" Margin="106,240,0,0" TextWrapping="Wrap" VerticalAlignment="Top"><Run Text="Offset"/><Run Text=":"/></TextBlock>
-        <Slider x:Name="sldDelayOffset" HorizontalAlignment="Left" Margin="106,261,0,0" VerticalAlignment="Top" Width="171" ValueChanged="sldDelayOffset_ValueChanged"/>
-        <TextBlock x:Name="lblDelayOffset" HorizontalAlignment="Left" Margin="244,284,0,26" TextWrapping="Wrap" Text="0 ms"/>
+        <Slider x:Name="sldDelayOffset" HorizontalAlignment="Left" Margin="106,261,0,0" VerticalAlignment="Top" Width="171" ValueChanged="sldDelayOffset_ValueChanged" Maximum="3000" Value="500"/>
+        <TextBlock x:Name="lblDelayOffset" HorizontalAlignment="Left" Margin="244,284,0,26" TextWrapping="Wrap" Text="500 ms"/>
         <TextBlock HorizontalAlignment="Left" Margin="26,244,0,0" TextWrapping="Wrap" Text="Delay:" VerticalAlignment="Top"/>
         <TextBlock HorizontalAlignment="Left" Margin="288,240,0,0" TextWrapping="Wrap" Text="Ganancia:" VerticalAlignment="Top"/>
         <Slider x:Name="sldGanancia" HorizontalAlignment="Left" Margin="288,261,0,0" VerticalAlignment="Top" Width="171"/>
