@@ -14,6 +14,7 @@ namespace Reproductor
         
         private ISampleProvider fuente;
 
+        //--------------
         //variable de respaldo
         private int offsetMilisegundos;
 
@@ -32,6 +33,7 @@ namespace Reproductor
             }
 
         }
+        //--------------------------------
 
         private int cantidadMuestrasOffset;
 

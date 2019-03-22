@@ -118,10 +118,12 @@ namespace Reproductor
                 reader = new AudioFileReader(txtRutaArchivo.Text);
 
                 delay = new Delay(reader);
+                //-----------
 
                 delay.Activo = (bool)cbDelayActivo.IsChecked;
                 delay.OffsetMilisegundos = (int)sldDelayOffset.Value;
 
+                //-----------------
                 fades = new FadeInOutSampleProvider(delay, true);
                 double milisegundosFadeIn = Double.Parse(txtDuracionFadeIn.Text) * 1000.0;
                 fades.BeginFadeIn(milisegundosFadeIn);
@@ -247,6 +249,8 @@ namespace Reproductor
 
         }
 
+
+
         private void cbDelayActivo_Click(object sender, RoutedEventArgs e)
         {
 
@@ -258,6 +262,8 @@ namespace Reproductor
             
         }
           
+        //-----------------
+
        private void sldDelayOffset_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
        {
             if(lblDelayOffset != null)
