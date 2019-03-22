@@ -33,6 +33,40 @@ namespace Reproductor
             }
 
         }
+
+        /**/
+        private float ganancia;
+        public float Ganancia
+        {
+
+            get
+            {
+                return Ganancia;
+            }
+            set
+            {
+
+                if (value < 0)
+                {
+                    ganancia = 0;
+
+                }
+                else if (value > 1)
+                {
+                    ganancia = 1;
+
+                }
+                else
+                {
+                    ganancia = value;
+
+                }
+
+            }
+
+        }
+
+        /**/
         //--------------------------------
 
         private int cantidadMuestrasOffset;
@@ -108,6 +142,10 @@ namespace Reproductor
                     {
 
                         buffer[offset + i] += bufferDelay[cantidadMuestrasTranscurridas - cantidadMuestrasBorradas + i - cantidadMuestrasOffset];
+                        /**/
+                        buffer[offset + i] *= ganancia;
+                        /**/
+
 
                     }
 

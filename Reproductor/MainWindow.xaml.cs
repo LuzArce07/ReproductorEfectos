@@ -39,6 +39,7 @@ namespace Reproductor
         EfectoVolumen volume;
         FadeInOutSampleProvider fades;
         Delay delay;
+        
 
         bool fadingOut = false;
 
@@ -118,7 +119,13 @@ namespace Reproductor
                 reader = new AudioFileReader(txtRutaArchivo.Text);
 
                 delay = new Delay(reader);
+
+
                 //-----------
+
+                /**/
+                delay.Ganancia = (float)sldGanancia.Value;
+                /**/
 
                 delay.Activo = (bool)cbDelayActivo.IsChecked;
                 delay.OffsetMilisegundos = (int)sldDelayOffset.Value;
@@ -273,9 +280,25 @@ namespace Reproductor
             if (delay != null)
             {
                 delay.OffsetMilisegundos = (int)sldDelayOffset.Value;
+                
             }
 
        }
+
+        /**/
+        private void sldGanancia_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+            if (lblDelayOffset != null)
+            {
+                lblDelayGanancia.Text = ((int)(sldGanancia.Value * 100)).ToString() + "%";
+            }
+            if (delay != null)
+            {
+                delay.Ganancia = (float)sldGanancia.Value;
+            }
+
+        }
+        /**/
 
     }
 
