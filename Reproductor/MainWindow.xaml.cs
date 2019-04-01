@@ -139,6 +139,8 @@ namespace Reproductor
 
                 output = new WaveOutEvent();
 
+                output.DesiredLatency = 150;
+
                 output.DeviceNumber = cbSalida.SelectedIndex;
 
                 output.PlaybackStopped += Output_PlaybackStopped;
@@ -288,7 +290,7 @@ namespace Reproductor
         /**/
         private void sldGanancia_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
-            if (lblDelayOffset != null)
+            if (lblDelayGanancia != null)
             {
                 lblDelayGanancia.Text = ((int)(sldGanancia.Value * 100)).ToString() + "%";
             }

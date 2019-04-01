@@ -100,6 +100,7 @@ namespace Reproductor
             cantidadMuestrasOffset = (int)(((float)OffsetMilisegundos / 1000.0f) * fuente.WaveFormat.SampleRate);
             duracionBufferSegundos = 10;
             tamañoBuffer = fuente.WaveFormat.SampleRate * duracionBufferSegundos;
+            Ganancia = 0.5f;
 
         }
 
